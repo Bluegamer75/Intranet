@@ -1,32 +1,47 @@
 <?php
+// Conexión a la primera base de datos
+$conexion1 = mysqli_connect("localhost", "root", "", "Unicenter");
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "Unicenter";
+// Conexión a la segunda base de datos
+$conexion2 = mysqli_connect("localhost", "root", "", "Unicenter");
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+// Verificar las conexiones
+if (!$conexion1 || !$conexion2) {
+    die("Error de conexión: " . mysqli_connect_error());
 }
 
-// SELECT query
-$query = "SELECT * FROM users";
-$result = $conn->query($query);
+// Realizar la primera consulta en la primera base de datos
+$query1 = "SELECT * FROM usuarios";
+$result1 = mysqli_query($conexion1, $query1);
 
-if ($result->num_rows > 0) {
-    // Output data of each row
-    while ($row = $result->fetch_assoc()) {
-        echo "id: " . $row["id"] . ", username: " . $row["username"] . ", password: " . $row["password"] . ", company: " . $row["company"] . "<br>";
-    }
-} else {
-    echo "0 results";
+// Crear un array para almacenar los resultados de la primera consulta
+$array1 = array();
+
+while ($fila = mysqli_fetch_assoc($result1)) {
+    $array1[] = $fila;
 }
 
-$conn->close();
+// Realizar la segunda consulta en la segunda base de datos
+$query2 = "SELECT * FROM noticias";
+$result2 = mysqli_query($conexion2, $query2);
 
+// Crear un array para almacenar los resultados de la segunda consulta
+$array2 = array();
+
+while ($fila = mysqli_fetch_assoc($result2)) {
+    $array2[] = $fila;
+}
+
+// Cerrar las conexiones a las bases de datos
+mysqli_close($conexion1);
+mysqli_close($conexion2);
+
+// Convertir los arrays en formato JSON
+$json1 = json_encode($array1);
+$json2 = json_encode($array2);
+
+// Imprimir los JSON
+echo "var datos1 = " . $json1 . ";";
+echo "var datos2 = " . $json2 . ";";
 ?>
 

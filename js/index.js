@@ -5,5 +5,5 @@ document.addEventListener("DOMContentLoaded", function(event) {
 })
 
 function hola(){
-hola esto es una prueba
+alert ("Hola a todo el mundo de youtube")
 }

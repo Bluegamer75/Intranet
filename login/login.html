@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <title>Login de la pagina web</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'><link rel="stylesheet" href="./login.css">
+<!--Jquery para la conexion con la base de datos-->  
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
 <body>
@@ -18,19 +20,19 @@
 				<a onclick="mostraralerta()" href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
 			</div>
 			<span>O usa tu correo para crear tu cuenta en Uni Center</span>
-			<input type="text" placeholder="Nombre" />
-      <input type="text" placeholder="Apellido" />
-			<input type="email" placeholder="Correo" />
-			<input type="password" placeholder="Contraseña" />
-      <input type="list" list="usuarios" placeholder="Rol dentro de la empresa" id="usuarioInput">
-    <datalist id="usuarios">
+			<input type="text" placeholder="Nombre" id="nombre-crear" />
+      <input type="text" placeholder="Apellido" id="apellido-crear" />
+			<input type="email" placeholder="Correo" id="correo-crear"/>
+			<input type="password" placeholder="Contraseña" id="contraseña-crear"/>
+      <input type="list" list="usuarios" placeholder="Rol dentro de la empresa" class="usuarioInput" id="permiso-crear">
+    <datalist id="usuarios" id="permiso-crear">
         <option value="Administrador">
         <option value="Usuario normal">
         <option value="Administrador de Redes">
         <option value="Administrador de Sistemas">
         <option value="Cliente">
     </datalist>
-			<button>Crear cuenta</button>
+			<button id="crear">Crear cuenta</button>
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
@@ -42,10 +44,10 @@
 				<a onclick="mostraralerta()" href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
 			</div>
 			<span>O usa tu cuenta para iniciar sesion en Uni Center</span>
-			<input type="email" placeholder="Correo" />
-			<input type="password" placeholder="Contraseña" />
+			<input type="email" placeholder="Correo" id="correo-iniciar" />
+			<input type="password" placeholder="Contraseña" id="contraseña-iniciar" />
 			<a onclick="mostraralerta()" href="#">Has olvidado tu contraseña?</a>
-			<button>Iniciar Sesion</button>
+			<button id="iniciar">Iniciar Sesion</button>
 		</form>
 	</div>
 	<div class="overlay-container">

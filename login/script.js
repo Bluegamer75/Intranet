@@ -21,13 +21,13 @@ function crear(){
   var apellido=document.getElementById('apellido-crear').value;
   var correo=document.getElementById('correo-crear').value;
   var contraseña=document.getElementById('contraseña-crear').value;
-  /*var rol=document.getElementById('rolInput').value;*/
+  var rol=document.getElementById('rolInput').value;
   var datos = {
     'nombre': nombre,
     'apellido': apellido,
     'correo': correo,
     'contraseña': contraseña, 
-    /*'rol': rol,*/
+    'rol': rol,
   };
   alert("hola")
   $.ajax({

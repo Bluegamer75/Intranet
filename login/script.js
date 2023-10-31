@@ -21,13 +21,13 @@ function crear(){
   var apellido=document.getElementById('apellido-crear').value;
   var correo=document.getElementById('correo-crear').value;
   var contraseña=document.getElementById('contraseña-crear').value;
-  var rol=document.getElementById('permiso-crear').value;
+  /*var rol=document.getElementById('rolInput').value;*/
   var datos = {
     'nombre': nombre,
     'apellido': apellido,
     'correo': correo,
     'contraseña': contraseña, 
-    'rol': rol,
+    /*'rol': rol,*/
   };
   alert("hola")
   $.ajax({
@@ -41,7 +41,7 @@ function crear(){
       alert("datos correctamente introducidos a la base de datos");
     },
     error: function (xhr) {
-      alert("ha habido un fallo de comunicacion con la base de datos");
+      alert("ha habido un fallo de comunicacion con la base de datos") + xhr;
     }
   });
 }

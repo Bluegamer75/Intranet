@@ -9,11 +9,11 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 
 if(!($conn->connect_error)){
-    $query="INSERT INTO usuarios (nombre, apellido, correo,`contraseña`, permiso) VALUES (?,?,?,?,?)";
+    $query="INSERT INTO usuarios (nombre, apellido, correo, contraseña) VALUES (?,?,?,?)";
     //$query = ("UPDATE users SET id = ? , username = ? , password = ? ,company = ? WHERE 1 ");
     $stmt = $conn->prepare($query);
 
-    $stmt->bind_param('sssss', $Param->nombre, $Param->apellido, $Param->correo, $Param->contraseña, $Param->permiso);
+    $stmt->bind_param('sssss', $Param->nombre, $Param->apellido, $Param->correo, $Param->contraseña);
 
     $stmt->execute();
 

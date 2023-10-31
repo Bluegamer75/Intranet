@@ -5,8 +5,7 @@
   <title>Login de la pagina web</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'><link rel="stylesheet" href="./login.css">
 <!--Jquery para la conexion con la base de datos-->  
- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -24,14 +23,16 @@
       <input type="text" placeholder="Apellido" id="apellido-crear" />
 			<input type="email" placeholder="Correo" id="correo-crear"/>
 			<input type="password" placeholder="Contraseña" id="contraseña-crear"/>
-      <input type="list" list="usuarios" placeholder="Rol dentro de la empresa" class="usuarioInput" id="permiso-crear">
-    <datalist id="usuarios" id="permiso-crear">
-        <option value="Administrador">
-        <option value="Usuario normal">
-        <option value="Administrador de Redes">
-        <option value="Administrador de Sistemas">
-        <option value="Cliente">
-    </datalist>
+     
+      <!--<input type="text" list="roles" placeholder="Selecciona un rol" id="rolInput" onchange="capturarRol()">
+  <datalist id="roles">
+    <option value="Administrador">
+    <option value="Usuario normal">
+    <option value="Administrador de Redes">
+    <option value="Administrador de Sistemas">
+    <option value="Cliente">
+  </datalist>-->
+
 			<button id="crear">Crear cuenta</button>
 		</form>
 	</div>
@@ -71,7 +72,15 @@
         function mostraralerta() {
             alert("Funcion desactivada por el momento");
         }
-    </script
+   </script>
+
+   <script>
+    function capturarRol() {
+  var rol = document.getElementById('rolInput').value;
+  console.log(rol); // Verifica si el valor se captura correctamente en la consola del navegador
+}
+
+   </script>
 
 </body>
 </html>

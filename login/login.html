@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Login de la pagina web</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'><link rel="stylesheet" href="./login.css">
+  
 <!--Jquery para la conexion con la base de datos-->  
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
@@ -27,10 +28,8 @@
       <input type="text" list="roles" placeholder="Selecciona un rol" id="rolInput" >
   	<datalist id="roles">
     	<option value="Administrador">
-    	<option value="Usuario normal">
-    	<option value="Administrador de Redes">
-    	<option value="Administrador de Sistemas">
-    	<option value="Cliente">
+    	<option value="Invitado">
+    	<option value="Tecnico">
   	</datalist>
 
 			<button id="crear">Crear cuenta</button>
@@ -47,6 +46,12 @@
 			<span>O usa tu cuenta para iniciar sesion en Uni Center</span>
 			<input type="email" placeholder="Correo" id="correo-iniciar" />
 			<input type="password" placeholder="Contraseña" id="contraseña-iniciar" />
+			<input type="text" list="roles" placeholder="Selecciona un rol" id="rolInput" >
+  	<datalist id="roles">
+    	<option value="Invitado">
+    	<option value="Tecnico">
+    	<option value="Administrdor">
+  	</datalist>
 			<a onclick="mostraralerta()" href="#">Has olvidado tu contraseña?</a>
 			<button id="iniciar">Iniciar Sesion</button>
 		</form>
